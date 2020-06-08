@@ -428,7 +428,7 @@ exports.coerce2 = function(containerIn, containerOut, attributes, attribute, dfl
     }
 
     var valIn = nestedProperty(containerIn, attribute).get();
-    return (valIn !== undefined && valIn !== null) ? valOut : false;
+    return valIn === out.default || (valIn !== undefined && valIn !== null) ? valOut : false;
 };
 
 /*
